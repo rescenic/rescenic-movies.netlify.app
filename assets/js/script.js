@@ -1,11 +1,11 @@
-// Titles: https://omdbapi.com/?s=thor&page=1&apikey=a9934d6d
-// Details: http://www.omdbapi.com/?i=tt3896198&apikey=a9934d6d
+// Judul Film: https://omdbapi.com/?s=time&page=1&apikey=a9934d6d
+// Detail Film: https://www.omdbapi.com/?i=tt3896198&apikey=a9934d6d
 
 const movieSearchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
-// load movies from API
+// Memuat film dari API
 async function loadMovies(searchTerm){
     const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=a9934d6d`;
     const res = await fetch(`${URL}`);
@@ -28,7 +28,7 @@ function displayMovieList(movies){
     searchList.innerHTML = "";
     for(let idx = 0; idx < movies.length; idx++){
         let movieListItem = document.createElement('div');
-        movieListItem.dataset.id = movies[idx].imdbID; // setting movie id in  data-id
+        movieListItem.dataset.id = movies[idx].imdbID; // Setting ID Film di  data-id
         movieListItem.classList.add('search-list-item');
         if(movies[idx].Poster != "N/A")
             moviePoster = movies[idx].Poster;
@@ -56,7 +56,7 @@ function loadMovieDetails(){
             // console.log(movie.dataset.id);
             searchList.classList.add('hide-search-list');
             movieSearchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=a9934d6d`);
+            const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=a9934d6d`);
             const movieDetails = await result.json();
             // console.log(movieDetails);
             displayMovieDetails(movieDetails);
