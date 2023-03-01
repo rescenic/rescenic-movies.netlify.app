@@ -1,5 +1,5 @@
-// Judul Film: https://omdbapi.com/?s=time&page=1&apikey=a9934d6d
-// Detail Film: https://www.omdbapi.com/?i=tt3896198&apikey=a9934d6d
+// Judul Film: https://omdbapi.com/?s=in%20time&page=1&apikey=a9934d6d
+// Detail Film: https://www.omdbapi.com/?i=tt1637688&apikey=a9934d6d
 
 const movieSearchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
@@ -54,7 +54,7 @@ function loadMovieDetails(){
     const searchListMovies = searchList.querySelectorAll('.search-list-item');
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
-            console.log("ID Dataset Movie: ");
+            console.log("ID Movie: ");
             console.log(movie.dataset.id);
             searchList.classList.add('hide-search-list');
             movieSearchBox.value = "";
